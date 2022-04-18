@@ -1,0 +1,1 @@
+from .AwesomeLogger import Logger

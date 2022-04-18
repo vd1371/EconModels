@@ -1,2 +1,3 @@
 # PyEconReg
-A library for facilitating regression modelling for social science and economics students
+A library for facilitating regression modelling
+Audience: Social science and economics students
