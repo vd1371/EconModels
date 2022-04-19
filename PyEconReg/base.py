@@ -32,17 +32,18 @@ class base():
 
 
 		self.interact_cols = params.get("interact_cols")
+		self.response_col = params.get("response_col")
 
-		main_cols = list(df.columns)
-		response_col = main_cols[-1]
-		other_cols = main_cols[:-1]
+		independent_cols = list(df.columns)
+		independent_cols.remove(self.response_col)
 		self.df = df
+		
 		if self.interact_cols:
 			for col1, col2 in self.interact_cols:
-				other_cols.append(f"{col1}-{col2}")
+				independent_cols.append(f"{col1}-{col2}")
 				self.df[f"{col1}-{col2}"] = df[col1] * df[col2]
 
-		self.df = self.df[other_cols + [response_col]]
+		self.df = self.df[independent_cols + [self.response_col]]
 
 
 		

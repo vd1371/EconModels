@@ -12,6 +12,7 @@ def run_wage_example():
 						project_name = 'WageDataSet',
 						time_col = 'year',
 						ind_col = 'nr',
+						response_col = "lwage",
 						interact_cols = [['exper', 'hours']])
 	myModel.check_assumps_before_analysis()
 	myModel.run_panel_OLS()
