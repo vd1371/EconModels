@@ -32,9 +32,9 @@ class Logger(object):
         self.instance.addHandler(file_handler)
     
     def _correct_message(self, message):
-        output = "\n---------------------------------------------------------\n"
+        output = "\n\n"
         output += message
-        output += "\n---------------------------------------------------------\n"
+        output += "\n----------------------------------------------------\n"
         return output
         
     def debug(self, message):

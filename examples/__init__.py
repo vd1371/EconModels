@@ -1,1 +1,2 @@
+from .wage_panel_example import run_wage_example
 from .diabetes_example import run_diabetes_example
