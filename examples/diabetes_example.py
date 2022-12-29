@@ -7,6 +7,7 @@ def run_diabetes_example():
 
 	myModel = PyEconReg(data,
 						project_name = 'DiabetesTest',
-						time_col = 'age')
+						time_col = 'age',
+						response_col = "target")
 	myModel.check_assumps_before_analysis()
 	myModel.run_OLS()

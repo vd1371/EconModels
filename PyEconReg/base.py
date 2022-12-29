@@ -9,6 +9,8 @@ class base():
 		self.project_name = params.get('project_name', 'TheFile')
 		self.time_col = params.get("time_col")
 		self.ind_col = params.get("ind_col")
+		self.interact_cols = params.get("interact_cols")
+		self.response_col = params.get("response_col")
 		
 		self.check_linearity_dependent_independents = \
 			params.get("check_linearity_dependent_independents", True)
@@ -29,10 +31,6 @@ class base():
 		self.log = Logger(logger_name = f'{self.project_name}-Logger',
 							address = logging_address,
 							mode='w')
-
-
-		self.interact_cols = params.get("interact_cols")
-		self.response_col = params.get("response_col")
 
 		independent_cols = list(df.columns)
 		independent_cols.remove(self.response_col)

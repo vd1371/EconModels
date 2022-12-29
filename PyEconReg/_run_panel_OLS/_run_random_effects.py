@@ -15,7 +15,7 @@ def _run_random_effects(time_effect = False, **params):
 	log = params.get("log")
 
 	exog = sm.add_constant(data.iloc[:, :-1])
-	mod = RandomEffects(data.iloc[:, -1], exog)
+	mod = RandomEffects(data.iloc[:, -1], exog, check_rank = False)
 	pooled_res = mod.fit()
 
 	res = pooled_res._resids.reshape(-1)

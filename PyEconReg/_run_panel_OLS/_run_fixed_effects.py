@@ -16,7 +16,9 @@ def _run_fixed_effects(time_effect = False, **params):
 
 	exog = sm.add_constant(data.iloc[:, :-1])
 	mod = PanelOLS(data.iloc[:, -1], exog,
-					entity_effects = True, drop_absorbed=True)
+					entity_effects = True,
+					drop_absorbed=True, 
+					check_rank = False)
 	pooled_res = mod.fit()
 
 	res = pooled_res._resids.reshape(-1)

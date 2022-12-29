@@ -5,10 +5,10 @@ from PyEconReg import PyEconReg
 
 def run_wage_example():
 
-	data = wage_panel.load()
+	df = wage_panel.load()
 	# data = data.set_index(["nr", "year"])
 
-	myModel = PyEconReg(data,
+	myModel = PyEconReg(df,
 						project_name = 'WageDataSet',
 						time_col = 'year',
 						ind_col = 'nr',

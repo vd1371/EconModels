@@ -25,8 +25,12 @@ def _run_OLS(**params):
 	Y = np.asarray(tmp_df.iloc[:, -1])
 	X = sm.add_constant(X)
 	  
-	ols = OLS(Y, X).fit()
+	ols = OLS(Y, X)
+	ols.exog_names[:] = ['constant'] + list(tmp_df.columns)[:-1]
+	
+	ols = ols.fit()
 	ols_res = ols.resid
+
 
 	summary = ols.summary()
 	report_str = "Simple OLS\n\n"

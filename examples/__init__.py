@@ -1,2 +1,3 @@
 from .wage_panel_example import run_wage_example
 from .diabetes_example import run_diabetes_example
+from .hate_crime_example import run_hate_crime_example
